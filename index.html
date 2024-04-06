@@ -3,14 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reproductor de Música</title>
+    <title>Reproductor de Música con Bootstrap</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Lista de Reproducción</h1>
-    <ol id="playlist">
-        <li>Song for Someone - Jemex <button onclick="playMusic('Song_for_Someone_-_Jemex.mp3')">&#127926;</button> <button onclick="copyLink('Song_for_Someone_-_Jemex.mp3')">&#10160;</button></li>
-    </ol>
-    <audio id="audioPlayer" controls>
+    <div class="container">
+        <h1 class="mt-5">Lista de Reproducción</h1>
+        <ol class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Song for Someone - Jemex
+                <div>
+                    <button class="btn btn-primary me-2" onclick="playMusic('Song_for_Someone_-_Jemex.mp3')">Escuchar</button>
+                    <button class="btn btn-secondary" onclick="copyLink('Song_for_Someone_-_Jemex.mp3')">Copiar Enlace</button>
+                </div>
+            </li>
+        </ol>
+    </div>
+
+    <audio id="audioPlayer" controls class="mt-3">
         Tu navegador no soporta el elemento audio.
     </audio>
 
@@ -20,6 +30,7 @@
             audioPlayer.src = song;
             audioPlayer.play();
         }
+
         function copyLink(song) {
             var dummy = document.createElement('input');
             document.body.appendChild(dummy);
@@ -30,5 +41,7 @@
             alert('Enlace copiado: ' + dummy.value);
         }
     </script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -8,9 +8,7 @@
 <body>
     <h1>Lista de Reproducción</h1>
     <ul id="playlist">
-        <li>Song for Someone - Jemex
-            <button onclick="playMusic('Song_for_Someone_-_Jemex.mp3')">&#127926;</button>
-        </li>
+        <li>Song for Someone - Jemex <button onclick="playMusic('Song_for_Someone_-_Jemex.mp3')">&#127926;</button> <button onclick="copyLink('song1.mp3')">&#10160;</button></li>
     </ul>
     <audio id="audioPlayer" controls>
         Tu navegador no soporta el elemento audio.
@@ -21,6 +19,15 @@
             var audioPlayer = document.getElementById('audioPlayer');
             audioPlayer.src = song;
             audioPlayer.play();
+        }
+        function copyLink(song) {
+            var dummy = document.createElement('input');
+            document.body.appendChild(dummy);
+            dummy.value = window.location.href.replace(/\/[^\/]+$/, '') + '/' + song;
+            dummy.select();
+            document.execCommand('copy');
+            document.body.removeChild(dummy);
+            alert('Enlace copiado: ' + dummy.value);
         }
     </script>
 </body>

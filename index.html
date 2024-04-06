@@ -24,13 +24,6 @@
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
         }
     </style>
-    <script>
-        const files = [
-            {name:`Song for Someone - Jemex`, mp3:`Song_for_Someone_-_Jemex.mp3`},
-            {name:`you tell me - vilnius.hang`, mp3:`you_tell_me_-_vilnius.hang.mp3`},
-            {name:`when - vilnius.hang`, mp3:`when_-_vilnius.hang.mp3`},
-        ];
-    </script>
 </head>
 <body>
     <div class="container">
@@ -60,7 +53,7 @@
             alert('Enlace copiado: ' + dummy.value);
         }
         window.addEventListener('DOMContentLoaded', function() {
-            fetch('music.json') // Reemplaza 'ruta/al/archivo.json' con la ruta real de tu archivo JSON
+            fetch('music.json') 
                 .then(response => response.json())
                 .then(data => {
                         const musicList = document.getElementById('music-list');

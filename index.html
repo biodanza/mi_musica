@@ -60,7 +60,7 @@
         window.addEventListener('DOMContentLoaded', function() {
             const musicList = document.getElementById('list-group');
             files.forEach(file => {
-                musicList.innerHTML += `
+                musicList.innerHTML = musicList.innerHTML + `
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     ${file.name}
                     <div>

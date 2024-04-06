@@ -1,11 +1,27 @@
-<html>
-  <head>
-    <title>Mi musica</title>
-  </head>
-  <body>
-    <h1>Lista de música</h1>
-    <ol>
-      <li>Song for Someone - Jemex <a target="_blank" href="https://biodanza.github.io/mi_musica/Song_for_Someone_-_Jemex.mp3">&#127926;</a></li>
-    </ol>
-  </body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Música</title>
+</head>
+<body>
+    <h1>Lista de Reproducción</h1>
+    <ul id="playlist">
+        <li>Song for Someone - Jemex
+            <button onclick="playMusic('Song_for_Someone_-_Jemex.mp3')">&#127926;</button>
+        </li>
+    </ul>
+    <audio id="audioPlayer" controls>
+        Tu navegador no soporta el elemento audio.
+    </audio>
+
+    <script>
+        function playMusic(song) {
+            var audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.src = song;
+            audioPlayer.play();
+        }
+    </script>
+</body>
 </html>

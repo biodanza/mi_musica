@@ -56,6 +56,7 @@
             fetch('music.json') 
                 .then(response => response.json())
                 .then(data => {
+                    console.log(data);
                         const musicList = document.getElementById('music-list');
                         data.sort((a, b) => a.name - b.name);
                         data.forEach(music => {
